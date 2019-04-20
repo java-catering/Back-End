@@ -29,7 +29,7 @@ public class User
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id", columnDefinition = "int default 1")
     private Role role;
 
     @OneToMany(mappedBy = "user")

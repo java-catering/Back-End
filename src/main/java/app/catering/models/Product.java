@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
+
 @Data
 @Entity
 public class Product
@@ -16,12 +17,29 @@ public class Product
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private @Min(3) @Max(25) @NotNull String title;
+    @Min(3)
+    @Max(25)
+    @NotNull
+    private String title;
 
-    private @NotNull @Min(0) Double unit_price;
+    @NotNull
+    @Min(0)
+    @Column(columnDefinition = "DECIMAL(8, 2)")
+    private Double unit_price;
 
-    private @NotNull Boolean is_stocked;
+    private String description;
 
+    private @Min(0) @NotNull Integer stock;
+
+
+    private @Enumerated(value = EnumType.STRING) Color color;
+
+    @ManyToOne
+    @JoinColumn(name = "manufacturer_id")
+    private Manufacturer manufacturer;
+
+    // this property will provide a reference for the manyToMany in
+    // the purchase file but wont create an extra table
     @ManyToMany(mappedBy = "products")
     private Set<Purchase> purchases;
 
