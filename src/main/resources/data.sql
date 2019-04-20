@@ -15,9 +15,13 @@ INSERT INTO product (title, unit_price, description, is_available) VALUES
 ('Pizza', 39.99, 'Hello, World!', TRUE);
 
 INSERT INTO purchase (total, user_id) VALUES
-(19.99, 2);
+(19.99, 2),
+(34.99, 3);
 
 INSERT INTO purchase_product (product_id, purchase_id) VALUES
 (1, 1),
 (3, 1),
-(4, 1);
+(4, 1),
+(1, 2),
+(2, 2),
+(4, 2);
