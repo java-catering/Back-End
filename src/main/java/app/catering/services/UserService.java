@@ -1,5 +1,6 @@
 package app.catering.services;
 
-public class UserService
+public interface UserService
 {
+    void deleteById(Long id);
 }
