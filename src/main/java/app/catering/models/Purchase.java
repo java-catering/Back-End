@@ -17,7 +17,7 @@ public class Purchase
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
     private Date created;
 
     private @NotNull @Min(0) Double total;
@@ -26,10 +26,10 @@ public class Purchase
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany
-    @JoinTable(name = "purchase_product",
-            joinColumns = @JoinColumn(name = "purchase_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private Set<Product> products;
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
+    @OneToMany(mappedBy = "purchase")
+    private Set<Purchase_Product> purchase_products;
 }

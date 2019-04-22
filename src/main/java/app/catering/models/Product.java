@@ -27,9 +27,7 @@ public class Product
 
     private @NotNull Boolean is_available;
 
-    // this property will provide a reference for the manyToMany in
-    // the purchase file but wont create an extra table
-    @ManyToMany(mappedBy = "products")
-    private Set<Purchase> purchases;
+    @OneToMany(mappedBy = "product")
+    private Set<Purchase_Product> purchase_products;
 
 }
