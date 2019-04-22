@@ -1,12 +1,14 @@
 package app.catering.models;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 public class Role
 {
@@ -19,4 +21,11 @@ public class Role
     // referencing the role variable in the User model.
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "role")
     private Set<User> users;
+
+    @Builder
+    public Role(Long id, String name)
+    {
+        this.id = id;
+        this.name = name;
+    }
 }
