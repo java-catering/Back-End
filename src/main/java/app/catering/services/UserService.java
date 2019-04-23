@@ -11,6 +11,8 @@ public interface UserService
 
     Optional<User> findById(Long id);
 
+    User save(User user);
+
     void delete(User user);
 
     void deleteById(Long id);

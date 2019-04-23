@@ -83,6 +83,20 @@ class UserServiceImplTest
         verify(userRepository,times(1)).findById(anyLong());
     }
 
+    @Test
+    void saveUser()
+    {
+        User newUser = new User().builder().first_name("e").last_name("g").email("e").password("123").role(role).build();
+
+        when(userRepository.save(any())).thenReturn(user);
+
+        User returnedUser = userService.save(newUser);
+
+        assertEquals(Long.valueOf(USERID), Long.valueOf(returnedUser.getId()));
+
+        verify(userRepository, times(1)).save(any());
+    }
+
 
     @Test
     void deleteById()

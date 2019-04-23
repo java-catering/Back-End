@@ -41,6 +41,7 @@ public class User
     @Builder
     public User(Long id, @NotNull String first_name, @NotNull String last_name, @NotNull String email, @NotNull String password, @NotNull Role role)
     {
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
