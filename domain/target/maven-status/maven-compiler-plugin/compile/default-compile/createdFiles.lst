@@ -1,0 +1,8 @@
+app/models/Purchase.class
+app/models/Product.class
+app/models/User$UserBuilder.class
+app/models/Purchase_Product.class
+app/models/Role.class
+app/models/Role$RoleBuilder.class
+app/models/User.class
+app/models/Status.class
