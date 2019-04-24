@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: app.CateringApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.237 s - in app.CateringApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.847 s - in app.CateringApplicationTests

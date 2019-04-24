@@ -11,9 +11,11 @@ HELP.md
 .sts4-cache
 
 ###Target's####
-/domain/target/
-/web/target/
-/persistence/target/
+
+*/target/**
+
+/web/target/**
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

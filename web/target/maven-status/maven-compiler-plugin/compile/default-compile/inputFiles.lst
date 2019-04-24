@@ -1,1 +1,3 @@
 /home/eric/Documents/Java/Back-End/web/src/main/java/app/CateringApplication.java
+/home/eric/Documents/Java/Back-End/web/src/main/java/app/config/SwaggerConfig.java
+/home/eric/Documents/Java/Back-End/web/src/main/java/app/api/v1/controllers/SanitationCheck.java
