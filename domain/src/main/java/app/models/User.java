@@ -30,9 +30,8 @@ public class User
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Date created;
 
-    @NotNull
     @ManyToOne
-    @JoinColumn(name = "role_id", columnDefinition = "int default 1")
+    @JoinColumn(name = "role_id")
     private Role role;
 
     @OneToMany(mappedBy = "user")
