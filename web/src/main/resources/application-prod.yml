@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/prod
-    username: prod_user
-    password: password
+    url: ${CLEARDB_DATABASE_URL}
+    username: ${CLEARDB_DATABASE_USERNAME}
+    password: ${CLEARDB_DATABASE_PASSWORD}
     platform: mysql
   jpa:
     hibernate:
