@@ -24,7 +24,7 @@ public class Role
     private Set<User> users;
 
     @Builder
-    public Role(Long id, String name)
+    Role(Long id, String name)
     {
         this.id = id;
         this.name = name;

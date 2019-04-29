@@ -41,7 +41,7 @@ public class User
     private Set<Purchase> purchases;
 
     @Builder
-    public User(Long id, @NotNull String first_name, @NotNull String last_name, @NotNull String email, @NotNull String password, @NotNull Role role)
+    User(Long id, @NotNull String first_name, @NotNull String last_name, @NotNull String email, @NotNull String password, @NotNull Role role)
     {
         this.id = id;
         this.first_name = first_name;

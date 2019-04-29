@@ -2,6 +2,7 @@ package app.services;
 
 import app.models.Role;
 import app.models.User;
+import app.repositorys.RoleRepository;
 import app.repositorys.UserRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,15 +25,20 @@ class UserServiceImplTest
     @Mock
     private UserRepository userRepository;
 
+    @Mock
+    private RoleRepository roleRepository;
+
     @InjectMocks
     private UserServiceImpl userService;
+
+    private final Long ROLEID = 1L;
 
     private final Long USERID = 1L;
 
     private List<User> users = new ArrayList<>();
 
     private final Role role = new Role().builder()
-            .id(1L)
+            .id(ROLEID)
             .name("admin")
             .build();
 
@@ -86,13 +92,16 @@ class UserServiceImplTest
     @Test
     void saveUser()
     {
-        User newUser = new User().builder().first_name("e").last_name("g").email("e").password("123").role(role).build();
+        User newUser = new User().builder().first_name("e").last_name("g").email("e").password("123").build();
 
         when(userRepository.save(any())).thenReturn(user);
+        when(roleRepository.findById(ROLEID)).thenReturn(Optional.of(role));
 
         User returnedUser = userService.save(newUser);
 
         assertEquals(Long.valueOf(USERID), Long.valueOf(returnedUser.getId()));
+
+        assertEquals(ROLEID, returnedUser.getRole().getId());
 
         verify(userRepository, times(1)).save(any());
     }

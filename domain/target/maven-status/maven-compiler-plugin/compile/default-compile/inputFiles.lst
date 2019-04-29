@@ -1,6 +1,11 @@
+/home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/LoginForm.java
 /home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/Status.java
 /home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/Purchase_Product.java
+/home/eric/Documents/Java/Back-End/domain/src/main/java/app/converters/LoginFormToUser.java
 /home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/Product.java
 /home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/Role.java
 /home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/Purchase.java
 /home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/User.java
+/home/eric/Documents/Java/Back-End/domain/src/main/java/app/converters/RegisterFormToUser.java
+/home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/Form.java
+/home/eric/Documents/Java/Back-End/domain/src/main/java/app/models/RegisterForm.java
