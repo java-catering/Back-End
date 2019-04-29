@@ -1,4 +1,4 @@
-package app.models;
+package app.DAO_models;
 
 
 public class LoginForm extends Form

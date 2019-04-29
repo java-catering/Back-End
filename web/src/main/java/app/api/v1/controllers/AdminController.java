@@ -2,7 +2,7 @@ package app.api.v1.controllers;
 
 import app.DAO_models.UpdateForm;
 import app.converters.UpdateFormToUser;
-import app.models.LoginForm;
+import app.DAO_models.LoginForm;
 import app.models.User;
 import app.services.UserService;
 import lombok.extern.slf4j.Slf4j;

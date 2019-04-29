@@ -1,6 +1,6 @@
 package app.converters;
 
-import app.models.RegisterForm;
+import app.DAO_models.RegisterForm;
 import app.models.User;
 
 public class RegisterFormToUser

@@ -1,6 +1,6 @@
 package app.converters;
 
-import app.models.LoginForm;
+import app.DAO_models.LoginForm;
 import app.models.User;
 
 public class LoginFormToUser

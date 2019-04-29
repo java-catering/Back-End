@@ -1,8 +1,8 @@
 package app.api.v1.controllers;
 
 import app.converters.RegisterFormToUser;
-import app.models.LoginForm;
-import app.models.RegisterForm;
+import app.DAO_models.LoginForm;
+import app.DAO_models.RegisterForm;
 import app.models.User;
 import app.services.UserService;
 import lombok.extern.slf4j.Slf4j;
