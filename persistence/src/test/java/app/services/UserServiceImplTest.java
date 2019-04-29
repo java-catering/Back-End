@@ -76,7 +76,7 @@ class UserServiceImplTest
     {
         when(userRepository.findById(anyLong())).thenReturn(Optional.of(user));
 
-        Optional<User> returnedUser = userService.findById(1L);
+        User returnedUser = userService.findById(1L);
 
         assertNotNull(returnedUser);
 

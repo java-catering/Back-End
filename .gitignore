@@ -14,7 +14,8 @@ HELP.md
 
 */target/**
 
-/web/target/**
+web/target/
+persistence/target/
 
 ### IntelliJ IDEA ###
 .idea

@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>app</groupId>
     <artifactId>web</artifactId>
     <packaging>jar</packaging>
 
@@ -51,6 +52,12 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
 
