@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: app.services.UserServiceImplTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.704 s <<< FAILURE! - in app.services.UserServiceImplTest
-saveUser  Time elapsed: 2.571 s  <<< ERROR!
-java.lang.NullPointerException
-	at app.services.UserServiceImplTest.saveUser(UserServiceImplTest.java:93)
-
