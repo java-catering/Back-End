@@ -1,8 +1,10 @@
 package app.api.v1.controllers;
 
-import app.converters.RegisterFormToUser;
 import app.DAO_models.LoginForm;
 import app.DAO_models.RegisterForm;
+import app.DAO_models.UpdateForm;
+import app.converters.RegisterFormToUser;
+import app.converters.UpdateFormToUser;
 import app.models.User;
 import app.services.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,11 +32,12 @@ public class ClientController
     }
 
     @CrossOrigin
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public User updateClient(@RequestBody RegisterForm registerForm)
+    public User updateClient(@RequestBody UpdateForm updateForm)
     {
-        return userService.save(RegisterFormToUser.convert(registerForm));
+        User user = userService.findByEmail(updateForm.getEmail());
+        return userService.save(UpdateFormToUser.convert(updateForm, user));
     }
 
     @CrossOrigin
