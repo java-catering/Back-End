@@ -1,5 +1,6 @@
 package app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class Product
 
     private @NotNull Boolean is_available;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private Set<Purchase_Product> purchase_products;
 

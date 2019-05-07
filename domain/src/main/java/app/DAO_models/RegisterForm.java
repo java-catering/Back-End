@@ -1,14 +1,20 @@
 package app.DAO_models;
 
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+import javax.validation.constraints.NotNull;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class RegisterForm extends Form
 {
-    private String first_name;
-    private String last_name;
+    private @NotNull String first_name;
+    private @NotNull String last_name;
 
+    @Builder
     public RegisterForm(String first_name, String last_name, String email, String password)
     {
         super(email, password);

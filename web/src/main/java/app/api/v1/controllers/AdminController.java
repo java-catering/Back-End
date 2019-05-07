@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/admin") // base endpoints
@@ -25,7 +27,7 @@ public class AdminController
     @CrossOrigin
     @PostMapping({"/login", "/"})
     @ResponseStatus(HttpStatus.OK)
-    public User loginAdmin(@RequestBody LoginForm loginForm)
+    public User loginAdmin(@RequestBody @Valid LoginForm loginForm)
     {
         User user = userService.findByEmail(loginForm.getEmail());
         if (user.getPassword().equals(loginForm.getPassword()))
@@ -39,7 +41,7 @@ public class AdminController
     @CrossOrigin
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public User updateAdmin(@RequestBody UpdateForm updateForm)
+    public User updateAdmin(@RequestBody @Valid UpdateForm updateForm)
     {
         User user = userService.findByEmail(updateForm.getEmail());
 

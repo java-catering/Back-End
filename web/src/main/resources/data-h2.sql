@@ -5,8 +5,8 @@ INSERT INTO user (first_name, last_name, email, password, role_id) VALUES
 ('Eric', 'Gomez', 'eric@example.com', '123', 2);
 
 INSERT INTO user (first_name, last_name, email, password, role_id) VALUES
-('Stan', 'Smith', 'stan@cia.com', 123, 1),
-('Scuba', 'Steve', 'steve@scuba.com', 123, 1);
+('Stan', 'Smith', 'stan@cia.com', '123', 1),
+('Scuba', 'Steve', 'steve@scuba.com', '123', 1);
 
 INSERT INTO product (title, unit_price, description, is_available) VALUES
 ('Cheeseburger', 9.99, 'Hello, World!', TRUE),

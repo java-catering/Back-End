@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/client") //base end point
@@ -25,8 +27,8 @@ public class ClientController
 
     @CrossOrigin
     @PostMapping("/register")
-    @ResponseStatus(HttpStatus.OK)
-    public User registerClient(@RequestBody RegisterForm registerForm)
+    @ResponseStatus(HttpStatus.CREATED)
+    public User registerClient(@RequestBody @Valid RegisterForm registerForm)
     {
         return userService.save(RegisterFormToUser.convert(registerForm));
     }
@@ -34,7 +36,7 @@ public class ClientController
     @CrossOrigin
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public User updateClient(@RequestBody UpdateForm updateForm)
+    public User updateClient(@RequestBody @Valid UpdateForm updateForm)
     {
         User user = userService.findByEmail(updateForm.getEmail());
         return userService.save(UpdateFormToUser.convert(updateForm, user));
@@ -43,7 +45,7 @@ public class ClientController
     @CrossOrigin
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
-    public User loginClient(@RequestBody LoginForm form)
+    public User loginClient(@RequestBody @Valid LoginForm form)
     {
         User getUser = userService.findByEmail(form.getEmail());
 
