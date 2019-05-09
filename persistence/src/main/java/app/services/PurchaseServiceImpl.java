@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -43,13 +44,17 @@ public class PurchaseServiceImpl implements PurchaseService
     {
         purchase.setStatus(Status.PREPPING);
 
-        Double sum = StreamSupport.stream(purchase.getPurchase_products()
+        Optional<Double> sum = StreamSupport.stream(purchase.getPurchase_products()
                 .spliterator(), false)
                 .map(pp -> pp.getProduct().getUnit_price() * pp.getQuantity())
-                .reduce(Double::sum)
-                .orElse(0.0D);
+                .reduce((a, b) -> a + b);
 
-        purchase.setTotal(sum);
+        if(!sum.isPresent())
+        {
+            System.out.println("NO SUM!!! ");
+        }
+
+        purchase.setTotal(sum.orElse(0.0D));
 
         return purchaseRepository.save(purchase);
     }

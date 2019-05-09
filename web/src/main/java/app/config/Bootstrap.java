@@ -37,6 +37,14 @@ public class Bootstrap implements CommandLineRunner
 
         productService.save(cheeseburger);
 
+        Product pizza = new Product();
+        pizza.setUnit_price(19.99D);
+        pizza.setTitle("Pizza");
+        pizza.setDescription("A pizza");
+        pizza.setIs_available(true);
+
+        productService.save(pizza);
+
         User eric = new User().builder()
                 .first_name("Eric")
                 .last_name("Gomez")
@@ -58,14 +66,25 @@ public class Bootstrap implements CommandLineRunner
         Purchase stans_purchase = new Purchase();
         stans_purchase.setUser(stan);
 
-        purchaseService.save(stans_purchase);
 
         Purchase_Product productOne = new Purchase_Product();
         productOne.setProduct(cheeseburger);
         productOne.setQuantity(1);
         productOne.setPurchase(stans_purchase);
 
+        purchaseService.save(stans_purchase);
         purchase_productService.save(productOne);
+
+        Purchase stans_second_purchase = new Purchase();
+        stans_second_purchase.setUser(stan);
+
+        Purchase_Product productTwo = new Purchase_Product();
+        productTwo.setPurchase(stans_second_purchase);
+        productTwo.setProduct(pizza);
+        productTwo.setQuantity(2);
+
+        purchaseService.save(stans_second_purchase);
+        purchase_productService.save(productTwo);
 
     }
 }

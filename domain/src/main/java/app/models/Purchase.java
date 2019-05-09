@@ -1,6 +1,7 @@
 package app.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,7 +29,7 @@ public class Purchase
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
-    private @NotNull @Min(0) Double total;
+    private Double total;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
