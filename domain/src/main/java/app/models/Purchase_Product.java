@@ -20,4 +20,6 @@ public class Purchase_Product
     @JoinColumn(name = "product_id")
     private Product product;
 
+    private Integer quantity;
+
 }
