@@ -22,4 +22,19 @@ public class Purchase_Product
 
     private Integer quantity;
 
+    public void setProduct(Product product)
+    {
+        this.product = product;
+
+        product.getPurchase_products().add(this);
+
+    }
+
+    public void setPurchase(Purchase purchase)
+    {
+        this.purchase = purchase;
+
+        purchase.getPurchase_products().add(this);
+    }
+
 }

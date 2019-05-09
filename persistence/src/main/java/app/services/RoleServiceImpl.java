@@ -2,7 +2,9 @@ package app.services;
 
 import app.models.Role;
 import app.repositorys.RoleRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RoleServiceImpl implements RoleService
 {
     private RoleRepository roleRepository;

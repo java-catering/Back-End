@@ -2,14 +2,17 @@ package app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @Entity
+@EqualsAndHashCode(exclude = "purchase_products")
 public class Product
 {
     @Id
@@ -29,6 +32,6 @@ public class Product
 
     @JsonIgnore
     @OneToMany(mappedBy = "product")
-    private Set<Purchase_Product> purchase_products;
+    private Set<Purchase_Product> purchase_products = new HashSet<>();
 
 }

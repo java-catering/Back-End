@@ -21,7 +21,7 @@
     <artifactId>catering</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>catering</name>
-    <description>Bakc-End Service for the Catering App.</description>
+    <description>Back-End Service for the Catering App.</description>
 
     <properties>
         <java.version>11</java.version>

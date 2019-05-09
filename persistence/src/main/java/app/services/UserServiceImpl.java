@@ -4,6 +4,8 @@ import app.models.Role;
 import app.models.User;
 import app.repositorys.RoleRepository;
 import app.repositorys.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -76,6 +78,10 @@ public class UserServiceImpl implements UserService
     public User saveAdmin(User user)
     {
         Optional<Role> role = roleRepository.findById(ADMINID);
+
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         if (!role.isPresent())
         {
